@@ -55,6 +55,20 @@
         margin: 1px auto;
 
         } 
+        .subcontainer{
+            
+        }
+        .cake1:hover{
+            transform: scale(1.2);
+            transition: 0.4s;
+        }
+        .cake1{
+            height: 60px;
+            margin: 20px;
+            border: 1px solid black;
+            box-shadow: 0px 0px 10px 0px black;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
@@ -62,21 +76,17 @@
         Delicious Cake ...
         <br>
         <span class="head2">Make your birthday special </span> 
-
    </h1>
-  
     <div class="conatiner">
 
-        <img src="/cake.png" class="cake">
+        <img src="/cake.png" class="cake" id="cake">
         <br>
 
         <span class="head3"> Choco moco cake</span> 
         <br>
 <span>"Indulge in Pure Bliss! 🍫✨</span>
 <p class="dis">Rich, velvety, and irresistibly smooth—our premium chocolate is crafted to melt in your mouth and delight your senses. </p>
-
-
-<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Price:<span style="color: brown; font-weight: 400;"> 29</span>  $</p>
+<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Price:<span id="Price" style="color: brown; font-weight: 400;"> 29</span>  $</p>
 
 <p style="font-size: 15px;">ADD TO CART</p>
 
@@ -92,8 +102,14 @@
 
 
 
-
-    
+    <div class="subcontainer">
+     
+        <img src="/1.png" class="cake1" onclick="operation(1)">
+        <img src="/2.png" class="cake1"  onclick="operation(2)">
+        <img src="/3.png" class="cake1"  onclick="operation(3)">
+        <img src="/4.png" class="cake1"  onclick="operation(4)">
+        
+    </div>
 
     <script>
     const num=document.getElementById("input")
@@ -105,6 +121,12 @@
              let number=parseInt(num.innerText);
              if(number>0){
              num.innerText=  number-1;
+             const mrp=document.getElementById("Price")
+
+             const mp =parseInt(mrp.innerText)
+             mrp.innerText=mp-29
+
+
              
              }
              else{
@@ -117,17 +139,47 @@
 
              if(value<10){
                 num.innerText=value+1;
+                const mrp=document.getElementById("Price")
+
+                const mp =parseInt(mrp.innerText)
+mrp.innerText=mp+29
+
 
              }
              else{
                 alert("you can add only 10 cake")
              }
-        
-       
         }
+
+
+        function operation(num){
+            const picture =document.getElementById("cake");
+            
+     if(num==1){
+        picture.src="1.png";
+       const mrp=document.getElementById("Price")
+        mrp.innerText=30
+
+
+     }
+     else if(num==2){
+     picture.src="2.png";
+        const mrp=document.getElementById("Price")
+        mrp.innerText=15
+
+        }
+     else if(num==3){
+            picture.src="3.png";
+            const mrp=document.getElementById("Price")
+            mrp.innerText=35
+        }
+        else if(num==4){
+            picture.src="4.png";
+            const mrp=document.getElementById("Price")
+             mrp.innerText=40
+        }
+    }
+
       </script>
-
-
-
 </body>
 </html>
