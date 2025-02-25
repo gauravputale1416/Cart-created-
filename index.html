@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+             background-color:antiquewhite;
+        }
+        .conatiner{
+            height: 450px;
+            width: 330px;
+            padding: 10px;
+            border:1px solid black;
+            display: block;
+            margin: 0% auto;
+            border-radius: 10px;
+            box-shadow: 1px 1px 12px  2px black;      
+            background-color:beige;      
+        }
+        .head1{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(128, 230, 143);
+           
+
+        }
+        .head2{
+            color: rgb(160, 233, 233);
+            font-size: 20px;
+             margin-top:  0%;
+         
+        }
+        .cake{
+            height: 150px;
+            margin: 20px auto;
+        }
+        .head3{
+            font-family:  'Trebuchet MS', sans-serif;
+            font-weight: 600;
+            font-size: large;
+            font-style:normal;
+        }
+        .dis{
+            margin-left: 0%;
+        }
+        .div{
+            height: 20px;
+            width: 90px;
+            display: flex;
+            margin: 0% auto;
+            /* border: 1px solid black; */
+        }
+        .text{
+        margin: 1px auto;
+
+        } 
+    </style>
+</head>
+<body>
+    <h1 class="head1">
+        Delicious Cake ...
+        <br>
+        <span class="head2">Make your birthday special </span> 
+
+   </h1>
+  
+    <div class="conatiner">
+
+        <img src="/cake.png" class="cake">
+        <br>
+
+        <span class="head3"> Choco moco cake</span> 
+        <br>
+<span>"Indulge in Pure Bliss! 🍫✨</span>
+<p class="dis">Rich, velvety, and irresistibly smooth—our premium chocolate is crafted to melt in your mouth and delight your senses. </p>
+
+
+<p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Price:<span style="color: brown; font-weight: 400;"> 29</span>  $</p>
+
+<p style="font-size: 15px;">ADD TO CART</p>
+
+
+<div class="div">
+    <button  onclick="minus()" style="border-radius: 5px; padding: 1px 7px; font-weight: 600;" >-</button>
+    <span class="text" id="input">0  </span>
+      
+  
+    <button onclick="plus()" style="border-radius: 5px; padding: 3px 6px">+</button>
+</div>
+    </div>
+
+
+
+
+    
+
+    <script>
+    const num=document.getElementById("input")
+
+
+        function minus(){
+           
+
+             let number=parseInt(num.innerText);
+             if(number>0){
+             num.innerText=  number-1;
+             
+             }
+             else{
+                alert("Add minimun 1 cake")
+             }
+             
+        }
+        function plus(){
+             let value=parseInt(num.innerText)
+
+             if(value<10){
+                num.innerText=value+1;
+
+             }
+             else{
+                alert("you can add only 10 cake")
+             }
+        
+       
+        }
+      </script>
+
+
+
+</body>
+</html>
